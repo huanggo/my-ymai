@@ -2,7 +2,7 @@
 
 ```shell
 # cd 进入项目根目录
-$ cd app
+$ cd ymai
 
 # 安装项目依赖
 $ npm i
