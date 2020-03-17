@@ -1,0 +1,219 @@
+@charset "UTF-8";
+
+// 引入hotcss的px2rem函数的文件
+@import '../lib/hotcss-master/src/px2rem.scss';
+// 定义设计图的宽度。
+$designWidth: 750;
+$page-padding: px2rem(26);
+$car-settlement-h: px2rem(88);
+
+// 购物车顶部样式
+.top-hd {
+  color: #fff;
+  background-color: #9e0958;
+  position: relative;
+  h3 {
+    text-align: center;
+    font-size: px2rem(30);
+    font-weight: 700;
+    height: px2rem(90);
+    line-height: px2rem(90);
+  }
+  .tp-shopcart-edit {
+    position: absolute;
+    right: px2rem(26);
+    top: px2rem(30);
+    font-size: px2rem(28);
+  }
+}
+
+// 购物车列表模块
+.icon_selected  {
+  background-color: #ec1a5a;
+  height: px2rem(42);
+  width: px2rem(42);
+  border-radius: 50%;
+  font-size: px2rem(30);
+  color: #fff;
+  text-align: center;
+  line-height: px2rem(42);
+  flex: 0 0 px2rem(42);
+}
+.goods-list-wrap {
+  position: relative;
+}
+.goods-list { // ul
+  margin-bottom: $car-settlement-h;
+  .goods-item { // li
+    color: #333;
+    .goods-item-hd {
+      border: 1px solid #ccc; 
+      height: px2rem(72);
+      box-sizing: border-box;
+      background-color: #fff;
+
+      // 用弹性盒子实现
+      display: flex;
+      justify-content: flex-start;
+      padding-left: $page-padding;
+      align-items: center;
+
+      i {
+     
+      }
+
+      h4 {
+        font-size: px2rem(28);
+        padding-left: px2rem(15);
+      }
+
+      // 浮动实现头部布局
+      // padding: px2rem(16) $page-padding;
+      // i {
+      //   float: left;
+      //   background-color: #ec1a5a;
+      //   height: px2rem(42);
+      //   width: px2rem(42);
+      //   border-radius: 50%;
+      //   font-size: px2rem(30);
+      //   color: #fff;
+      //   text-align: center;
+      //   line-height: px2rem(42);
+      // }
+      // h4 {
+      //   float: left;
+      //   font-size: px2rem(28);
+      //   margin-left: px2rem(14);
+      //   margin-top: px2rem(8);
+      // }
+    }
+    .goods-item-bd {
+      background-color: #fff;
+      height: px2rem(214);
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      padding: 0 $page-padding;
+      .goods-item-bd-l {
+        padding-left: px2rem(18);
+        a {
+          display: block;
+          img {
+            vertical-align: top;
+            width: px2rem(185);
+            height: px2rem(180);
+          }
+        }
+      }
+      .goods-item-bd-r {
+        line-height: px2rem(27);
+        height: px2rem(180);
+        margin-left: px2rem(15);
+        .goods-item-name {
+          font-size: px2rem(22);
+          height: px2rem(54);
+        }
+        .goods-item-sku {
+          .sku-name {
+            color: #666;
+          }
+          .sku-value {
+            color: #ec1a5a;
+          }
+        }
+        .yx-sjicon-wrap {
+          height: px2rem(17);
+          width: px2rem(168);
+          background: url(../img/mobiphone.png) no-repeat;
+          background-size: contain;
+        }
+
+        .goods-item-price {
+          color: #ec1a5a;
+          font-size: px2rem(22);
+          line-height: 1.5;
+        }
+
+        .goods-item-edit-wrap {
+          display: flex;
+          justify-content: space-between;
+          align-items: flex-end;
+          height: px2rem(48);
+          .edit-count-wrap {
+            border: 1px solid #ccc;
+            border-radius: px2rem(4);
+            overflow: hidden;
+            span {
+              float: left;
+              font-size: px2rem(20);
+              padding: 0 px2rem(12);
+              height: px2rem(40);
+              line-height: px2rem(40);
+              border-left: 1px solid #ccc;
+              &:first-child {
+                border-left: none;
+              }
+            }
+          }
+          .edit-btn {
+            font-size: px2rem(35);
+          }
+        }
+      }
+    }
+    .goods-item-sep {
+      background-color: #eee;
+      height: px2rem(20);
+    }
+  }
+}
+
+// 结算模块
+.goods-account-wrap {
+  padding-left: $page-padding;
+  box-sizing: border-box;
+  height: $car-settlement-h;
+  width: 100%;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  z-index: 1000;
+  background-color: #fff;
+  overflow: hidden;
+  .account-l {
+    float: left;
+    font-size: px2rem(32);
+    line-height: $car-settlement-h;
+    a {
+      display: block;
+    }
+    i {
+      display: inline-block;
+      height: px2rem(40);
+      width: px2rem(40);
+    }
+  }
+
+  .account-r {
+    float: right;
+    display: flex;
+    font-size: px2rem(24);
+    .account-r-sum {
+      width: px2rem(238);
+      height: $car-settlement-h;
+      line-height: $car-settlement-h;
+      .price-num {
+        color: #910758;
+      }
+    }
+    .account-settle {
+      width: px2rem(222);
+      height: $car-settlement-h;
+      box-sizing: border-box;
+      line-height: $car-settlement-h;
+      color: #fff;
+      background: linear-gradient(to right, #910758, #f61c5a);
+      text-align: center;
+    }
+  }
+}

@@ -1,0 +1,1 @@
+function getUrlParam(e){var n=new RegExp(e+"=([^&]*)"),r=location.href.match(n);return r?r[1]:null}function getHouersMinutesSecondsByMS(e){if((e=+e)<0&&(e*=-1),e<0)return null;var n="0"+parseInt(e/36e5)%24,r="0"+parseInt(e/6e4)%60,t="0"+parseInt(e/1e3)%60;return((n=n.slice(-2))+(r=r.slice(-2))+(t=t.slice(-2))).split("")}

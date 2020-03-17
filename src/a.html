@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    html, body, div {
+      padding: 0;
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="box"></div>
+  <script>
+    var box = document.querySelector('.box');
+    document.write("<p>" + box.getClientRects()[0].width + "</p>");
+    document.write("<p>" + window.screen.width + "</p>");
+    </script>
+</body>
+</html>

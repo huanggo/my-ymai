@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="./js/common.js"></script>
+  <title>搜索页面</title>
+</head>
+<body>
+  <ul id="list">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+  </ul>
+  <p>搜索页面：<span id="txt"></span></p>
+  <script>
+    window.onload = function() {
+     var list = document.querySelectorAll('#list li');
+     for(var i = 0; i < list.length; i++) {
+       list[i].addEventListener('click', (function(index) {
+        return function(e) {
+          console.log(index);  // 0 1 2 ...
+          console.log(i);      //
+        }
+       })(i));
+     }
+      var p = getUrlParam('kw');
+      var span = document.querySelector('#txt');
+      span.innerHTML = decodeURI(p);
+
+    }
+  </script>
+</body>
+</html>
